@@ -1,5 +1,7 @@
 package frc.robot.subsystems;
 
+import org.littletonrobotics.junction.AutoLog;
+
 import com.ctre.phoenix.sensors.Pigeon2;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -38,8 +40,16 @@ public class Swerve extends SubsystemBase {
 
     field = new Field2d();
     SmartDashboard.putData("Field", field);
+    
+    
   }
-
+  @AutoLog
+  public class Logged {
+    public edu.wpi.first.math.geometry.Translation2d Translation2d;
+    public double rotation;
+    public boolean fieldRelative;
+    public boolean isOpenLoop;
+  }
   public void drive(
       Translation2d translation, double rotation, boolean fieldRelative, boolean isOpenLoop) {
     SwerveModuleState[] swerveModuleStates =
