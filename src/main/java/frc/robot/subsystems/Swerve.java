@@ -43,13 +43,7 @@ public class Swerve extends SubsystemBase {
     
     
   }
-  @AutoLog
-  public class Logged {
-    public edu.wpi.first.math.geometry.Translation2d Translation2d;
-    public double rotation;
-    public boolean fieldRelative;
-    public boolean isOpenLoop;
-  }
+  
   public void drive(
       Translation2d translation, double rotation, boolean fieldRelative, boolean isOpenLoop) {
     SwerveModuleState[] swerveModuleStates =
